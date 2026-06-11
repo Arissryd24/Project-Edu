@@ -1,0 +1,8 @@
+@extends("layouts.app")
+@section("content")
+<div class="row">
+<div class="col-lg-3 col-6"><div class="small-box bg-info"><div class="inner"><h3>150</h3><p>Total Users</p></div><div class="icon"><i class="fas fa-users"></i></div><a href="/marketing-users" class="small-box-footer">More info</a></div></div>
+<div class="col-lg-3 col-6"><div class="small-box bg-success"><div class="inner"><h3>50</h3><p>Active Marketing</p></div><div class="icon"><i class="fas fa-chart-line"></i></div><a href="#" class="small-box-footer">More info</a></div></div>
+<div class="col-lg-3 col-6"><div class="small-box bg-danger"><div class="inner"><h3>5</h3><p>Inactive</p></div><div class="icon"><i class="fas fa-user-times"></i></div><a href="#" class="small-box-footer">More info</a></div></div>
+</div>
+@endsection
