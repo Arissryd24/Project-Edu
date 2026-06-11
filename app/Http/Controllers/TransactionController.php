@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Exports\TransactionsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TransactionController extends Controller
 {
@@ -51,5 +53,10 @@ class TransactionController extends Controller
     {
         $transaction->delete();
         return redirect()->route('transactions.index')->with('success', 'Transaction deleted.');
+    }
+
+    public function export()
+    {
+    return Excel::download(new TransactionsExport, 'transactions.xlsx');
     }
 }

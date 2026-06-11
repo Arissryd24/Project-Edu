@@ -20,6 +20,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    // Export route
+    Route::get('transactions/export', [TransactionController::class, 'export'])->name('transactions.export');
+
     // CRUD resources
     Route::resource('marketing-users', MarketingUserController::class);
     Route::resource('transactions', TransactionController::class);
