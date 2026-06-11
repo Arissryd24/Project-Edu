@@ -5,6 +5,7 @@
     <h1>Transactions</h1>
     @if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
     <a href="{{ route('transactions.create') }}" class="btn btn-primary mb-3">Create Transaction</a>
+    <a href="{{ route('transactions.export') }}" class="btn btn-success mb-3">Export Excel</a>
     <table class="table">
         <thead>
             <tr><th>ID</th><th>User</th><th>Description</th><th>Amount</th><th>Actions</th></tr>
