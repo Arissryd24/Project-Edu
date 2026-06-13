@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Exports\TransactionsExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\PDF;
 
 class TransactionController extends Controller
 {
@@ -58,5 +59,12 @@ class TransactionController extends Controller
     public function export()
     {
     return Excel::download(new TransactionsExport, 'transactions.xlsx');
+    }
+
+    public function PDFexport()
+    {
+        $transactions = Transaction::with('user')->latest()->get();
+        $pdf = PDF::loadView('transactions.pdf', compact('transactions'));
+        return $pdf->download('transactions.pdf');
     }
 }

@@ -23,6 +23,9 @@ Route::middleware('auth')->group(function () {
     // Export route
     Route::get('transactions/export', [TransactionController::class, 'export'])->name('transactions.export');
 
+    // PDF Export route
+    Route::get('transactions/pdf-export', [TransactionController::class, 'PDFexport'])->name('transactions.pdf-export');
+
     // CRUD resources
     Route::resource('marketing-users', MarketingUserController::class);
     Route::resource('transactions', TransactionController::class);
